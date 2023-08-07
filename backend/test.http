@@ -1,0 +1,28 @@
+### Registrar um novo atendente ###
+POST http://localhost:3000/atendentes
+Content-Type: application/json
+
+{
+  "nome": "João",
+  "time": "Cartões"
+}
+
+### Enviar uma solicitação de atendimento ###
+POST http://localhost:3000/solicitacao
+Content-Type: application/json
+
+{
+  "assunto": "Problemas com cartão"
+}
+
+### Obter o próximo atendimento disponível para um atendente ###
+GET http://localhost:3000/proximo_atendimento/Cartões/João
+
+### Finalizar um atendimento ###
+POST http://localhost:3000/finalizar_atendimento/Cartões/João
+
+### Listar os atendentes disponíveis em um time ###
+GET http://localhost:3000/atendentes/Cartões
+
+### Listar as solicitações na fila de um time ###
+GET http://localhost:3000/fila/Cartões
